@@ -35,18 +35,6 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        // hold left fn (symbol layer, pos 30) + tap T (pos 4) -> toggle mouse layer
-        combo_mouse {
-            key-positions = <30 4>;
-            layers = <2>;
-            timeout-ms = <50>;
-            bindings = <&tog 3>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -70,7 +58,7 @@
 
         symbol_layer {
             bindings = <
-/* row1 */ &mo 2  &kp LBKT &kp LBRC  &kp RBRC  &none    &kp CARET  &kp LPAR  &kp RPAR  &kp RBKT &kp TILDE
+/* row1 */ &mo 2  &kp LBKT &kp LBRC  &kp RBRC  &tog 3   &kp CARET  &kp LPAR  &kp RPAR  &kp RBKT &kp TILDE
 /* row2 */ &kp EXCLAMATION &kp AT &kp HASH &kp DOLLAR &kp PERCENT  &kp ASTERISK &kp MINUS &kp EQUAL &kp BACKSLASH &kp GRAVE
 /* row3 */ &none  &studio_unlock &none  &none  &none     &kp AMPERSAND &kp UNDERSCORE &kp PLUS  &kp PIPE  &none
 /* thmb */ &mo 2  &none                          &none     &mo 1
