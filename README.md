@@ -24,7 +24,7 @@ layer 1 (numbers)   [each row starts with &mo 2 so the symbol layer stays active
 row1  - 1 2 3 tab    Home PgDn PgUp End ~
 row2  - 4 5 6 bksp   left down up right ;
 row3  - 7 8 9 0 -    - - - - -
-thmb  - esc          - -
+thmb  - esc          bksp -
 
 layer 2 (symbols)
 row1  - [ { } mouse  ^ ( ) ] ~
