@@ -9,7 +9,7 @@
 | 0 | qwerty | default |
 | 1 | numbers | hold left inner thumb (`fn`) |
 | 2 | symbols | hold right inner thumb (`fn`) |
-| 3 | mouse | hold right thumb (`fn`) + tap `T` (combo), or tap right thumb on mouse layer to toggle off |
+| 3 | mouse | hold left thumb (`fn`) + tap `T` (combo) -> vim keys `H J K L`; right thumb on mouse layer exits |
 
 ## Layout
 
@@ -32,8 +32,10 @@ row2  ! @ # $ %       * - = \ `
 row3  - - studio - -       &  _  +  |  -
 thmb  - -             - fn(SYM)
 
-layer 3 (mouse)
-row1  up left down right LCLK   scrlUp scrlDn MCLK MB4 MB5
+layer 3 (mouse)   vim movement
+row1  - - - - LCLK             scrlUp scrlDn MCLK MB4 MB5
+row2  - - - - -                 H=left  J=down  K=up  L=right
+row3  - - - - -                 - - - - -
 rest &trans  (passes through)
 thmb  &trans &trans             &trans toggle off
 ```
@@ -41,7 +43,7 @@ thmb  &trans &trans             &trans toggle off
 ## Notes
 
 - `A/S` style keys are hold-tap: tap = letter, hold = modifier (200 ms, tap-preferred).
-- Mouse enters with a combo: hold **right thumb** (symbol layer) and tap **T**. The mouse layer stays on after you release the thumb. Tap **right thumb** on the mouse layer, or repeat the combo, to turn it off.
+- Mouse enters with a combo: hold **left thumb** (numbers layer) and tap **T`**within 50 ms** (so `T` on the numbers layer still types `tab` when you pause first). The mouse layer stays on after you release the thumb. Tap the **right thumb** on the mouse layer, or repeat the combo, to turn it off.
 - Mouse move accelerates (2500 max, `mmv` node), scroll step 20 (`msc` node). Tune in `config/cradio.keymap`.
 - `studio_unlock` is on symbol layer row 3, second key (hold right thumb, tap `X`). ZMK Studio edits live on the keyboard, so after editing in Studio your file changes need "Restore Stock Settings" to show up again.
 - `&mo N` = hold to switch to layer N. (`&lt` is layer-tap and needs two args, e.g. `&lt 1 &kp TAB`.) Validate a keymap locally before pushing: preprocess it with `cpp` + `dtc` the way Zephyr does.

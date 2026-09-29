@@ -38,10 +38,10 @@
     combos {
         compatible = "zmk,combos";
 
-        // hold right fn (symbol layer, pos 33) + tap T (pos 4) -> toggle mouse layer
+        // hold left fn (numbers layer, pos 30) + tap T (pos 4) -> toggle mouse layer
         combo_mouse {
-            key-positions = <33 4>;
-            layers = <2>;
+            key-positions = <30 4>;
+            layers = <1>;
             timeout-ms = <50>;
             bindings = <&tog 3>;
         };
@@ -79,9 +79,8 @@
 
         mouse_layer {
             bindings = <
-/* row1 */ &mmv MOVE_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp LCLK
-            &msc SCRL_UP &msc SCRL_DOWN &mkp MCLK &mkp MB4 &mkp MB5
-/* row2 */ &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+/* row1 */ &trans  &trans  &trans  &trans  &mkp LCLK   &msc SCRL_UP  &msc SCRL_DOWN  &mkp MCLK  &mkp MB4  &mkp MB5
+/* row2 */ &trans  &trans  &trans  &trans  &trans      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
 /* row3 */ &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
 /* thmb */ &trans  &trans                          &trans  &tog 3
             >;
