@@ -1,0 +1,47 @@
+# Ferris Sweep ZMK config
+
+4 layers, mirrored to what you built in ZMK Studio, plus a mouse layer.
+
+## Layers
+
+| # | Name | How to enter |
+| --- | --- | --- |
+| 0 | qwerty | default |
+| 1 | numbers | hold right inner thumb (`fn`) |
+| 2 | symbols | hold left inner thumb (`fn`) |
+| 3 | mouse | hold left thumb (`fn`) + tap `T` (combo), or tap right thumb on mouse layer to toggle off |
+
+## Layout
+
+```
+layer 0 (qwerty)
+row1  Q W E R T          Y U I O P
+row2  A/S S/A D/C F/G    H J/G K/C L/A '/S
+row3  Z X C V B          N M , . /
+thmb  fn(SYM) space      enter fn(NUM)
+
+layer 1 (numbers)   [row1 first key = &lt 2 so layer stays held]
+row1  - 1 2 3 tab    Home PgDn PgUp End ~
+row2  - 4 5 6 bksp   left down up right ;
+row3  - 7 8 9 0 -    - - - - -
+thmb  - esc          - -
+
+layer 2 (symbols)
+row1  - [ { } -       ^ ( ) ] ~
+row2  ! @ # $ %       * - = \ `
+row3  - - studio - -       &  _  +  |  -
+thmb  - -             - fn(NUM)
+
+layer 3 (mouse)
+row1  up left down right LCLK   scrlUp scrlDn MCLK MB4 MB5
+rest &trans  (passes through)
+thmb  &trans &trans             &trans toggle off
+```
+
+## Notes
+
+- `A/S` style keys are hold-tap: tap = letter, hold = modifier (200 ms, tap-preferred).
+- Mouse enters with a combo: hold **left thumb** (symbol layer) and tap **T**. The mouse layer stays on after you release the thumb. Tap **right thumb** on the mouse layer, or repeat the combo, to turn it off.
+- Mouse move accelerates (2500 max, `mmv` node), scroll step 20 (`msc` node). Tune in `config/cradio.keymap`.
+- `studio_unlock` is on symbol layer row 3, second key. ZMK Studio edits live on the keyboard, so after editing in Studio your file changes need "Restore Stock Settings" to show up again.
+- Build: push to GitHub, action builds `cradio_left`, `cradio_right`, `settings_reset` (nice_nano_v2). Left half is the Studio-enabled one.
