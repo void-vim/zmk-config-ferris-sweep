@@ -18,7 +18,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <-1>;
+            require-prior-idle-ms = <(-1)>;
             bindings = <&kp>, <&kp>;
         };
         // mouse cursor acceleration
