@@ -1,12 +1,9 @@
 // Copyright (c) The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-// Ferris Sweep (ZMK cradio shield) - 4 layers
-//   layer 0 = qwerty, 1 = numbers, 2 = symbols, 3 = mouse
-// Mouse move speed 2500, scroll step 20
-
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 2500
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
+// Mouse move speed 2500, scroll step 20 (Zephyr HID report units)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2500
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -14,10 +11,6 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-    chosen {
-        zmk,charmap = &charmap_us;
-    };
-
     behaviors {
         // tap = letter, hold = modifier
         ht: hold_tap {
