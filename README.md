@@ -45,7 +45,8 @@ thmb  &trans &trans             &trans toggle off
 - `A/S` style keys are hold-tap: tap = letter, hold = modifier (200 ms, tap-preferred).
 - Mouse enters with a plain key: hold **left thumb** (symbol layer) and tap `T` (`&tog 3`). The mouse layer stays on after you release the thumb. Tap **T** again, or the **right thumb** on the mouse layer, to turn it off. No combo/timing involved.
 - Mouse move accelerates (2500 max, `mmv` node), scroll step 20 (`msc` node). Tune in `config/cradio.keymap`.
-- `studio_unlock` is on symbol layer row 3, second key (hold right thumb, tap `X`). ZMK Studio edits live on the keyboard, so after editing in Studio your file changes need "Restore Stock Settings" to show up again.
+- `studio_unlock` is on symbol layer row 3, second key (hold **left** thumb, tap `X`). ZMK Studio edits live on the keyboard, so after editing in Studio your file changes need "Restore Stock Settings" to show up again.
 - `&mo N` = hold to switch to layer N. `&lt N BSPC` = layer-tap: hold = layer N, tap = backspace. Note the layer-tap tap value is a **raw keycode** (`BSPC`), not a behavior (`&kp BSPC` nests a phandle and breaks the C build).
-- `CONFIG_ZMK_POINTING=y` (`&lt` is layer-tap and needs two args, e.g. `&lt 1 &kp TAB`.) Validate a keymap locally before pushing: preprocess it with `cpp` + `dtc` the way Zephyr does.
+- `CONFIG_ZMK_POINTING=y` in `config/cradio.conf` is what emits cursor motion and scroll.
+- Flashing: only the **left** half needs a reflash for keymap changes. After every reflash, hit **Restore Stock Settings** in zmk.studio, otherwise Studio keeps showing its own stored keymap.
 - Build: push to GitHub, action builds `cradio_left`, `cradio_right`, `settings_reset` (nice_nano_v2). Left half is the Studio-enabled one.
