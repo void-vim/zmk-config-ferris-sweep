@@ -1,7 +1,5 @@
 # Ferris Sweep ZMK config
 
-4 layers, mirrored to what you built in ZMK Studio, plus a mouse layer.
-
 ## Layers
 
 | # | Name | How to enter |
@@ -50,3 +48,11 @@ thmb  &trans &trans             &trans toggle off
 - `CONFIG_ZMK_POINTING=y` in `config/cradio.conf` is what emits cursor motion and scroll.
 - Flashing: only the **left** half needs a reflash for keymap changes. After every reflash, hit **Restore Stock Settings** in zmk.studio, otherwise Studio keeps showing its own stored keymap.
 - Build: push to GitHub, action builds `cradio_left`, `cradio_right`, `settings_reset` (nice_nano_v2). Left half is the Studio-enabled one.
+
+## Flash
+```bash
+sudo mount /dev/sdb /mnt/rp2                                    
+sudo cp cradio_left-nice_nano_v2-zmk.uf2 /mnt/rp2/ && sync     
+sudo umount /mnt/rp2
+```
+change the `sdb` with the name `lsblk -f` showing
