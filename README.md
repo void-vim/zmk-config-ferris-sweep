@@ -20,7 +20,7 @@ row2  A/S S/A D/C F/G    H J/G K/C L/A '/S
 row3  Z X C V B          N M , . /
 thmb  fn(SYM) space      enter fn(NUM)
 
-layer 1 (numbers)   [row1 first key = &lt 2 so layer stays held]
+layer 1 (numbers)   [each row starts with &mo 2, self-hold, so the layer stays active]
 row1  - 1 2 3 tab    Home PgDn PgUp End ~
 row2  - 4 5 6 bksp   left down up right ;
 row3  - 7 8 9 0 -    - - - - -
@@ -44,4 +44,5 @@ thmb  &trans &trans             &trans toggle off
 - Mouse enters with a combo: hold **left thumb** (symbol layer) and tap **T**. The mouse layer stays on after you release the thumb. Tap **right thumb** on the mouse layer, or repeat the combo, to turn it off.
 - Mouse move accelerates (2500 max, `mmv` node), scroll step 20 (`msc` node). Tune in `config/cradio.keymap`.
 - `studio_unlock` is on symbol layer row 3, second key. ZMK Studio edits live on the keyboard, so after editing in Studio your file changes need "Restore Stock Settings" to show up again.
+- `&mo N` = hold to switch to layer N. (`&lt` is layer-tap and needs two args, e.g. `&lt 1 &kp TAB`.) Validate a keymap locally before pushing: preprocess it with `cpp` + `dtc` the way Zephyr does.
 - Build: push to GitHub, action builds `cradio_left`, `cradio_right`, `settings_reset` (nice_nano_v2). Left half is the Studio-enabled one.
