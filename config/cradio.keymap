@@ -1,8 +1,8 @@
 // Copyright (c) The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-// Mouse move speed 2500, scroll step 20 (Zephyr HID report units)
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2500
+// Mouse: move units per 16ms tick (ZMK default 600), scroll step (default 10)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <behaviors.dtsi>
@@ -24,7 +24,7 @@
         // mouse cursor acceleration
         mmv {
             acceleration-exponent = <1>;
-            time-to-max-speed-ms = <300>;
+            time-to-max-speed-ms = <600>;
             delay-ms = <0>;
         };
         // mouse scroll acceleration
