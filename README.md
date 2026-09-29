@@ -5,9 +5,9 @@
 | # | Name | How to enter |
 | --- | --- | --- |
 | 0 | qwerty | default |
-| 1 | numbers | hold right inner thumb (`fn`) — tapping it is backspace |
+| 1 | numbers | hold right inner thumb (`fn`)  |
 | 2 | symbols | hold left inner thumb (`fn`) |
-| 3 | mouse | hold left thumb (symbols) + tap `T` -> vim keys `H J K L`; right thumb on mouse layer exits |
+| 3 | mouse | hold left thumb + tap `T` -> vim keys `H J K L`|
 
 ## Layout
 
@@ -50,9 +50,20 @@ thmb  &trans &trans             &trans toggle off
 - Build: push to GitHub, action builds `cradio_left`, `cradio_right`, `settings_reset` (nice_nano_v2). Left half is the Studio-enabled one.
 
 ## Flash
+change the `sdb` with the name `lsblk -f` showing
+
+left side
 ```bash
 sudo mount /dev/sdb /mnt/rp2                                    
 sudo cp cradio_left-nice_nano_v2-zmk.uf2 /mnt/rp2/ && sync     
 sudo umount /mnt/rp2
 ```
-change the `sdb` with the name `lsblk -f` showing
+
+right side
+```bash
+sudo mount /dev/sdb /mnt/rp2                                    
+sudo cp cradio_right-nice_nano_v2-zmk.uf2 /mnt/rp2/ && sync     
+sudo umount /mnt/rp2
+```
+
+then go to [zmk](zmk.studio) - connect - if it show `Unlock To Continue` press left `fn` and `x` key - click `Restore Stock Settings` - done
