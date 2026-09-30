@@ -67,7 +67,7 @@
 
         mouse_layer {
             bindings = <
-/* row1 */ &trans  &trans  &trans  &trans  &mkp LCLK   &msc SCRL_UP  &msc SCRL_DOWN  &mkp MCLK  &mkp MB4  &mkp MB5
+/* row1 */ &trans  &trans  &trans  &trans  &mkp LCLK   &mkp RCLK  &msc SCRL_UP  &msc SCRL_DOWN  &mkp MCLK  &none
 /* row2 */ &trans  &trans  &trans  &trans  &trans      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
 /* row3 */ &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
 /* thmb */ &trans  &trans                          &trans  &tog 3
